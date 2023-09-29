@@ -92,3 +92,53 @@
 
 // Exercice bonus 2 //
 
+let btn1 = document.querySelector('#onglet1');
+let btn2 = document.querySelector('#onglet2');
+let btn3 = document.querySelector('#onglet3');
+let content1 = document.querySelector('.content1');
+let content2 = document.querySelector('.content2');
+let content3 = document.querySelector('.content3');
+
+let btns = document.querySelectorAll('#onglet1, #onglet2, #onglet3');
+let contents = document.querySelectorAll('.content1, .content2, .content3');
+console.log(btns)
+
+
+// btn1.addEventListener('click', (e) => {
+//     content1.style.display='block'
+//     content2.style.display='none'
+//     content3.style.display='none'
+// })
+
+// btn2.addEventListener('click', (e) => {
+//     content1.style.display='none'
+//     content2.style.display='block'
+//     content3.style.display='none'
+// })
+
+// btn3.addEventListener('click', (e) => {
+//     content1.style.display='none'
+//     content2.style.display='none'
+//     content3.style.display='block'
+// })
+
+
+for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', () => {
+        for (let j = 0; j < contents.length; j++) {
+            if (i === j) {
+                contents[j].style.display = 'block';
+            } else {
+                contents[j].style.display = 'none';
+            }
+        }
+    })
+}
+
+
+// btns.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//         console.log(`Bouton ${btn.id} cliqué`);
+        
+//     });
+// });

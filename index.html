@@ -8,13 +8,24 @@
 </head>
 <body>
 
-    <form action="">
+     <h1>Calculatrice</h1>
 
+    <a id="show" href="#">Faire disparaître la calculatrice</a><span> / </span> <a id="hide" href="#">Faire apparaître la calculatrice</a>
 
+    <form action="" method="POST">
+    <label for="number1"><input name="number1" id="number1" type="number"></label>
+    <label for="operation">
+        <select name="operation" id="operation">
+            <option value="addition">+</option>
+            <option value="soustraction">-</option>
+            <option value="multiplication">*</option>
+            <option value="division">/</option>   
+        </select>
+    </label>
+    <label for="number2"><input name="number2" id="number2" type="number"></label>
 
-
-
-        
+    <button type="submit" class="calculateButton">Calculer</button>
+    <div id="infos"></div>
     </form>
 
     <h1>Spoiler</h1>

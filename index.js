@@ -28,11 +28,7 @@ button.addEventListener('click', (event) => {
     }
 })
 
-function formVisibility() {
-    if () {
-        
-    }
-}
+
 
 showCalculate.addEventListener('click', (event) => {
     form.style.display = "none"

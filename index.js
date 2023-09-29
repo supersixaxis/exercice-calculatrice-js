@@ -28,39 +28,38 @@ button.addEventListener('click', (event) => {
     }
 })
 
+function formVisibility() {
+    if (form.style.display === 'none') {
+        form.style.display = 'block'
+    } else {
+        form.style.display = 'none'
+    }
+}
 
-showCalculate.addEventListener('click', (event) => {
-    form.style.display = "none"
-})
+function showInfo(message) {
+    infos.style.backgroundColor = 'yellow';
+    infos.innerHTML = message;
+}
 
-hideCalculate.addEventListener('click', (event) => {
-    form.style.display = "block"
-})
+function hideInfo() {
+    infos.style.backgroundColor = '';
+    infos.innerHTML = '';
+}
 
-number1.addEventListener('mouseenter', (event) => {
-    infos.style.backgroundColor = 'yellow'
-    infos.innerHTML = 'Saisir un chiffre'
-})
-number1.addEventListener('mouseleave', (event) => {
-    infos.style.backgroundColor = ''
-    infos.innerHTML = ''
-})
+showCalculate.addEventListener('click', formVisibility);
+hideCalculate.addEventListener('click', formVisibility);
 
-number2.addEventListener('mouseenter', (event) => {
-    infos.style.backgroundColor = 'yellow'
-    infos.innerHTML = 'Saisir un chiffre'
+number1.addEventListener('mouseenter', () => {
+    showInfo('Saisir un chiffre');
 })
-number2.addEventListener('mouseleave', (event) => {
-    infos.style.backgroundColor = ''
-    infos.innerHTML = ''
-})
+number1.addEventListener('mouseleave', hideInfo)
 
+number2.addEventListener('mouseenter', () => {
+    showInfo('Saisir un chiffre');
+})
+number2.addEventListener('mouseleave', hideInfo)
 
-operationSelect.addEventListener('mouseenter', (event) => {
-    infos.style.backgroundColor = 'yellow'
-    infos.innerHTML = 'Selectionner un opérateur : + - * /'
+operationSelect.addEventListener('mouseenter', () => {
+    showInfo('Sélectionner une opération : +, -, *, /');
 })
-operationSelect.addEventListener('mouseleave', (event) => {
-    infos.style.backgroundColor = ''
-    infos.innerHTML = ''
-})
+operationSelect.addEventListener('mouseleave', hideInfo)
